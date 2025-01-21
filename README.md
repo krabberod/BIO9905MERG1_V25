@@ -12,7 +12,7 @@ The course will be a blend of presentations, guest lectures, discussion and a fe
 
 ## Schedule
 
-The course will run from 17-21 April, 9:00-17:00 (times may vary). For a detailed overview of the program, see below.
+The course will run from 7-11 April, 9:00-17:00 (times may vary). For a detailed overview of the program, see below.
 
 ## Report
 Those of you that attend the course through the research schools or UiO and want to obtain ECTS credits, will have to hand in a report before June 1th.

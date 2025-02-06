@@ -73,3 +73,7 @@ Tentative schedule for the course (work in progress):
 |               | 15:00        | Summing up, QnA                                                                |                     |
 
 
+ ----
+### Supported by[ForBio](https://www.forbio.uio.no/)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fkrabberod%2FBIO9905MERG1_V25&count_bg=%23C83DB3&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+All the keywords in this explanation, by the way, are totally misleading, due to the everyday quirks of language. **Don DeLillo, Ratner's Star**.

@@ -23,57 +23,57 @@ The report should be sent to: haavarka@ibv.uio.no
 ## Teachers
 The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, and Håvard Kauserud (organizer). Other teachers will be announced soon.
 
-Tentative schedule for the course (work in progress):
+*Tentative schedule* for the course (subject to change):
 
-| Day           | Time (start) | Topic                                                                          | Responsible         |
-| ------------- | ------------ | ------------------------------------------------------------------------------ | ------------------- |
-| **Monday**    | 09:00        | [Introduction to DNA metabarcoding](./Lectures/Lecture_pdfs/Intro_lecture.pdf) | Håvard Kauserud     |
-|               | 10:00        | *Introduction continued*                                                       |                     |
-|               | 11:00        | [Introduction to sequencing techniques]()                                      | Anders K. Krabberød |
-|               | 12:00        | **Lunch break**                                                                |                     |
-|               | 13:00        | Group work                                                                     | Håvard Kauserud     |
-|               | 14:00        | [Introduction to Linux, Google Colab and R ](./Lectures)                       | Ramiro Logares      |
-|               | 15:00        | [Cutadapt and sequence cleaning](Lectures/cutadapt.and.seq.cleaning/)          |                     |
-|               | 16:00        | [Help with setup and installation of required packages](./Setup)               | Anders K. Krabberød |
-|               | 17:00        | **PIZZA**                                                                      |                     |
-|               |              |                                                                                |                     |
-| **Tuesday**   | 09:00        | [Introduction to DADA2](Dada2_Pipeline)                                        | A. Krabberød        |
-|               | 10:00        | *DADA2 continued*                                                              |                     |
-|               | 11:00        | *DADA2 continued*                                                              |                     |
-|               | 12:00        | **Lunch break**                                                                |                     |
-|               | 13:00        | *DADA2 continued*                                                              |                     |
-|               | 14:00        | *DADA2 continued*                                                              |                     |
-|               | 15:00        | [Community Ecology](./Lectures/community.ecology.intro/)                       | R. Logares          |
-|               | 16:00        | *Community Ecology*                                                            |                     |
-|               |              |                                                                                |                     |
-| **Wednesday** | 09:00        |                                                                                |                     |
-|               | 10:00        |                                                                                |                     |
-|               | 11:00        |                                                                                |                     |
-|               | 12:00        | **Lunch break**                                                                |                     |
-|               | 13:00        |                                                                                |                     |
-|               | 14:00        |                                                                                |                     |
-|               | 15:00        |                                                                                |                     |
-|               | 18:00        |                                                                                |                     |
-|               |              |                                                                                |                     |
-| **Thursday**  | 09:00        |                                                                                |                     |
-|               | 10:00        |                                                                                |                     |
-|               | 11:00        |                                                                                |                     |
-|               | 12:00        | **Lunch break**                                                                |                     |
-|               | 13:00        |                                                                                |                     |
-|               | 14:00        |                                                                                |                     |
-|               | 15:00        |                                                                                |                     |
-|               | 16:00        |                                                                                |                     |
-|               |              |                                                                                |                     |
-| **Friday**    | 09:00        |                                                                                |                     |
-|               | 10:00        |                                                                                |                     |
-|               | 11:00        |                                                                                |                     |
-|               | 12:00        | **Lunch break**                                                                |                     |
-|               | 13:00        |                                                                                |                     |
-|               | 14:00        |                                                                                |                     |
-|               | 15:00        | Summing up, QnA                                                                |                     |
+| Day           | Time (start) | Topic                                                                          | Responsible                |
+| ------------- | ------------ | ------------------------------------------------------------------------------ | -------------------------- |
+| **Monday**    | 09:00        | [Introduction to DNA metabarcoding](./Lectures/Lecture_pdfs/Intro_lecture.pdf) | Håvard Kauserud            |
+|               | 10:00        | *Introduction continued*                                                       |                            |
+|               | 11:00        | [Introduction to DNA sequencing techniques and data formats ]()                | Anders K. Krabberød        |
+|               | 12:00        | **Lunch break**                                                                |                            |
+|               | 13:00        | Get to know each other (group work)                                            | Håvard Kauserud            |
+|               | 14:00        | [Introduction to Linux, Google Colab, R, cutadapt, etc ](./Lectures)           | Ramiro Logares / Krabberød |
+|               | 15:00        | *continued*                                                                    |                            |
+|               | 16:00        | *continued*                                                                    | A. K. Krabberød            |
+|               | 17:00        | **PIZZA**                                                                      |                            |
+|               |              |                                                                                |                            |
+| **Tuesday**   | 09:00        | [Introduction to DADA2](Dada2_Pipeline)                                        | A. K. Krabberød            |
+|               | 10:00        | *DADA2 continued*                                                              |                            |
+|               | 11:00        | *DADA2 continued*                                                              |                            |
+|               | 12:00        | **Lunch break**                                                                |                            |
+|               | 13:00        | [Case study]()                                                                 | Adriana Lopes dos Santos   |
+|               | 14:00        | *DADA2 continued*                                                              |                            |
+|               | 15:00        | [Community Ecology](./Lectures/community.ecology.intro/)                       | R. Logares                 |
+|               | 16:00        | *Community Ecology*                                                            |                            |
+|               |              |                                                                                |                            |
+| **Wednesday** | 09:00        | Introduction to long-read DNA metabarcoding                                    | Embla Stokke               |
+|               | 10:00        | Introduction to VSEARCH (and SWARM)                                            | Torbjørn Rognes            |
+|               | 11:00        | The VSEARCH pipeline, hands on session                                         |                            |
+|               | 12:00        | **Lunch break**                                                                | R. Logares/A. Krabberød    |
+|               | 13:00        | The VSEARCH pipeline, hands on session, continuation                           |                            |
+|               | 14:00        | Introductoin to LULU/MUMU                                                      | Frédéric Mahé              |
+|               | 15:00        | Data cleanup (contamination, etc.)                                             | Håvard Kauserud            |
+|               |              |                                                                                |                            |
+| **Thursday**  | 09:00        | OTUs, ASVs and phylospecies                                                    | Micah Dunthorn             |
+|               | 10:00        | PR2, metaPR2 + other databases                                                 | Daniel Vaulot              |
+|               | 11:00        | *PR2 continued*                                                                |                            |
+|               | 12:00        | **Lunch break**                                                                |                            |
+|               | 13:00        | Phylogenetic placement/binning of HTS data                                     | Lucas Czech                |
+|               | 14:00        | *pp continued*                                                                 |                            |
+|               | 15:00        | Case study long read metabarcoding                                             | Ella Thoen                 |
+|               | 16:00        |                                                                                |                            |
+|               |              |                                                                                |                            |
+| **Friday**    | 09:00        | Taxonomic annotation                                                           | Marie Davey (zoom)         |
+|               | 10:00        | Metacoder                                                                      | Ella Thoen                 |
+|               | 11:00        | DNA metabarcoding and contamination                                            | Kristine Bohmann (zoom)    |
+|               | 12:00        | **Lunch break**                                                                |                            |
+|               | 13:00        | Downstream analyses: Multivariate analyses                                     | R. Logares                 |
+|               | 14:00        | Downstream analyses: Network inferences                                        | A. Krabberød               |
+|               | 15:00        | Summing up, QnA                                                                |                            |
+|               |              |                                                                                |                            |
 
 
  ----
-### Supported by[ForBio](https://www.forbio.uio.no/)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fkrabberod%2FBIO9905MERG1_V25&count_bg=%23C83DB3&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+### Supported by[ ForBio](https://www.forbio.uio.no/)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fkrabberod%2FBIO9905MERG1_V25&count_bg=%23C83DB3&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)  
 All the keywords in this explanation, by the way, are totally misleading, due to the everyday quirks of language. **Don DeLillo, Ratner's Star**.

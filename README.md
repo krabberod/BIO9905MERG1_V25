@@ -43,8 +43,8 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 |               | 12:00        | **Lunch break**                                                                |                            |
 |               | 13:00        | [Case study]()                                                                 | Adriana Lopes dos Santos   |
 |               | 14:00        | *DADA2 continued*                                                              |                            |
-|               | 15:00        | [Community Ecology](./Lectures/community.ecology.intro/)                       | R. Logares                 |
-|               | 16:00        | *Community Ecology*                                                            |                            |
+|               | 15:00        |                                                                                | R. Logares                 |
+|               | 16:00        |                                                                                |                            |
 |               |              |                                                                                |                            |
 | **Wednesday** | 09:00        | Introduction to long-read DNA metabarcoding                                    | Embla Stokke               |
 |               | 10:00        | Introduction to VSEARCH (and SWARM)                                            | Torbjørn Rognes            |

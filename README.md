@@ -34,23 +34,23 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 |               | 13:00        | Get to know each other (group work)                                            | Håvard Kauserud            |
 |               | 14:00        | [Introduction to Linux, Google Colab, R, cutadapt, etc ](./Lectures)           | Ramiro Logares / Krabberød |
 |               | 15:00        | *continued*                                                                    |                            |
-|               | 16:00        | *continued*                                                                    | A. K. Krabberød            |
+|               | 16:00        | *continued*                                                                    | A. Krabberød               |
 |               | 17:00        | **PIZZA**                                                                      |                            |
 |               |              |                                                                                |                            |
-| **Tuesday**   | 09:00        | [Introduction to DADA2](Dada2_Pipeline)                                        | A. K. Krabberød            |
+| **Tuesday**   | 09:00        | [Introduction to DADA2](Dada2_Pipeline)                                        | A. Krabberød               |
 |               | 10:00        | *DADA2 continued*                                                              |                            |
 |               | 11:00        | *DADA2 continued*                                                              |                            |
 |               | 12:00        | **Lunch break**                                                                |                            |
 |               | 13:00        | [Case study]()                                                                 | Adriana Lopes dos Santos   |
-|               | 14:00        | *DADA2 continued*                                                              |                            |
-|               | 15:00        |                                                                                | R. Logares                 |
-|               | 16:00        |                                                                                |                            |
+|               | 14:00        | *DADA2 continued*                                                              | A. Krabberød               |
+|               | 15:00        | *DADA2 continued*                                                              |                            |
+|               | 16:00        | *DADA2 continued*                                                              |                            |
 |               |              |                                                                                |                            |
 | **Wednesday** | 09:00        | Introduction to long-read DNA metabarcoding                                    | Embla Stokke               |
 |               | 10:00        | Introduction to VSEARCH (and SWARM)                                            | Torbjørn Rognes            |
 |               | 11:00        | The VSEARCH pipeline, hands on session                                         |                            |
-|               | 12:00        | **Lunch break**                                                                | R. Logares/A. Krabberød    |
-|               | 13:00        | The VSEARCH pipeline, hands on session, continuation                           |                            |
+|               | 12:00        | **Lunch break**                                                                |                            |
+|               | 13:00        | The VSEARCH pipeline, hands on session, continuation                           | R. Logares/A. Krabberød    |                           
 |               | 14:00        | Introductoin to LULU/MUMU                                                      | Frédéric Mahé              |
 |               | 15:00        | Data cleanup (contamination, etc.)                                             | Håvard Kauserud            |
 |               |              |                                                                                |                            |

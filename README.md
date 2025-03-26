@@ -27,7 +27,7 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 
 | Day           | Time (start) | Topic                                                                          | Responsible                |
 | ------------- | ------------ | ------------------------------------------------------------------------------ | -------------------------- |
-| **Monday**    | 09:00        | [Introduction to DNA metabarcoding](./Lectures/Lecture_pdfs/) | Håvard Kauserud            |
+| **Monday**    | 09:00        | [Introduction to DNA metabarcoding](./Lectures/) | Håvard Kauserud            |
 |               | 10:00        | *Introduction continued*                                                       |                            |
 |               | 11:00        | [Introduction to DNA sequencing techniques and data formats ](./Lectures/)                | Anders K. Krabberød        |
 |               | 12:00        | **Lunch break**                                                                |                            |

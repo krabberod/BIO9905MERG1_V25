@@ -51,7 +51,7 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 |               | 11:00        | The VSEARCH pipeline, hands on session                                         |                            |
 |               | 12:00        | **Lunch break**                                                                |                            |
 |               | 13:00        | The VSEARCH pipeline, hands on session, continuation                           | R. Logares/A. Krabberød    |                           
-|               | 14:00        | Introductoin to LULU/MUMU                                                      | Frédéric Mahé              |
+|               | 14:00        | Introduction to LULU/MUMU                                                      | Frédéric Mahé              |
 |               | 15:00        | Data cleanup (contamination, etc.)                                             | Håvard Kauserud            |
 |               |              |                                                                                |                            |
 | **Thursday**  | 09:00        | OTUs, ASVs and phylospecies                                                    | Micah Dunthorn             |

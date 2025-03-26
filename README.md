@@ -29,7 +29,7 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 | ------------- | ------------ | ------------------------------------------------------------------------------ | -------------------------- |
 | **Monday**    | 09:00        | [Introduction to DNA metabarcoding](./Lectures/Lecture_pdfs/) | Håvard Kauserud            |
 |               | 10:00        | *Introduction continued*                                                       |                            |
-|               | 11:00        | [Introduction to DNA sequencing techniques and data formats ]()                | Anders K. Krabberød        |
+|               | 11:00        | [Introduction to DNA sequencing techniques and data formats ](./Lectures/)                | Anders K. Krabberød        |
 |               | 12:00        | **Lunch break**                                                                |                            |
 |               | 13:00        | Get to know each other (group work)                                            | Håvard Kauserud            |
 |               | 14:00        | [Introduction to Linux, Google Colab, R, cutadapt, etc ](./Lectures)           | Ramiro Logares / Krabberød |
@@ -41,7 +41,7 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 |               | 10:00        | *DADA2 continued*                                                              |                            |
 |               | 11:00        | *DADA2 continued*                                                              |                            |
 |               | 12:00        | **Lunch break**                                                                |                            |
-|               | 13:00        | [Case study]()                                                                 | Adriana Lopes dos Santos   |
+|               | 13:00        | [Case study](./Lectures/)                                                                 | Adriana Lopes dos Santos   |
 |               | 14:00        | *DADA2 continued*                                                              | A. Krabberød               |
 |               | 15:00        | *DADA2 continued*                                                              |                            |
 |               | 16:00        | *DADA2 continued*                                                              |                            |

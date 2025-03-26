@@ -42,9 +42,9 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 |               | 11:00        | *DADA2 continued*                                                              |                            |
 |               | 12:00        | **Lunch break**                                                                |                            |
 |               | 13:00        | [Case study](./Lectures/)                                                                 | Adriana Lopes dos Santos   |
-|               | 14:00        | *DADA2 continued*                                                              | A. Krabberød               |
-|               | 15:00        | *DADA2 continued*                                                              |                            |
-|               | 16:00        | *DADA2 continued*                                                              |                            |
+|               | 14:00        | *DADA2 and RStudio hands-on*                                                              | A. Krabberød               |
+|               | 15:00        | *DADA2 and RStudio hands-on*                                                              |                            |
+|               | 16:00        | *DADA2 and RStudio hands-on*                                                              |                            |
 |               |              |                                                                                |                            |
 | **Wednesday** | 09:00        | Introduction to long-read DNA metabarcoding                                    | Embla Stokke               |
 |               | 10:00        | Introduction to VSEARCH (and SWARM)                                            | Torbjørn Rognes            |

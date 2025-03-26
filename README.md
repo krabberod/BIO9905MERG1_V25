@@ -25,52 +25,52 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 
 *Tentative schedule* for the course (subject to change):
 
-| Day           | Time (start) | Topic                                                                          | Responsible                |
-| ------------- | ------------ | ------------------------------------------------------------------------------ | -------------------------- |
-| **Monday**    | 09:00        | [Introduction to DNA metabarcoding](./Lectures/) | Håvard Kauserud            |
-|               | 10:00        | *Introduction continued*                                                       |                            |
-|               | 11:00        | [Introduction to DNA sequencing techniques and data formats ](./Lectures/)                | Anders K. Krabberød        |
-|               | 12:00        | **Lunch break**                                                                |                            |
-|               | 13:00        | Get to know each other (group work)                                            | Håvard Kauserud            |
-|               | 14:00        | [Introduction to Linux, Google Colab, R, cutadapt, etc ](./Lectures)           | Ramiro Logares / Krabberød |
-|               | 15:00        | *continued*                                                                    |                            |
-|               | 16:00        | *continued*                                                                    | A. Krabberød               |
-|               | 17:00        | **PIZZA**                                                                      |                            |
-|               |              |                                                                                |                            |
-| **Tuesday**   | 09:00        | [Introduction to DADA2](Dada2_Pipeline)                                        | A. Krabberød               |
-|               | 10:00        | *DADA2 continued*                                                              |                            |
-|               | 11:00        | *DADA2 continued*                                                              |                            |
-|               | 12:00        | **Lunch break**                                                                |                            |
-|               | 13:00        | [Case study](./Lectures/)                                                                 | Adriana Lopes dos Santos   |
-|               | 14:00        | *DADA2 and RStudio hands-on*                                                              | A. Krabberød               |
-|               | 15:00        | *DADA2 and RStudio hands-on*                                                              |                            |
-|               | 16:00        | *DADA2 and RStudio hands-on*                                                              |                            |
-|               |              |                                                                                |                            |
-| **Wednesday** | 09:00        | Introduction to long-read DNA metabarcoding                                    | Embla Stokke               |
-|               | 10:00        | Introduction to VSEARCH (and SWARM)                                            | Torbjørn Rognes            |
-|               | 11:00        | The VSEARCH pipeline, hands on session                                         |                            |
-|               | 12:00        | **Lunch break**                                                                |                            |
-|               | 13:00        | The VSEARCH pipeline, hands on session, continuation                           | R. Logares/A. Krabberød    |                           
-|               | 14:00        | Introduction to LULU/MUMU                                                      | Frédéric Mahé              |
-|               | 15:00        | Data cleanup (contamination, etc.)                                             | Håvard Kauserud            |
-|               |              |                                                                                |                            |
-| **Thursday**  | 09:00        | OTUs, ASVs and phylospecies                                                    | Micah Dunthorn             |
-|               | 10:00        | PR2, metaPR2 + other databases                                                 | Daniel Vaulot              |
-|               | 11:00        | *PR2 continued*                                                                |                            |
-|               | 12:00        | **Lunch break**                                                                |                            |
-|               | 13:00        | Phylogenetic placement/binning of HTS data                                     | Lucas Czech                |
-|               | 14:00        | *pp continued*                                                                 |                            |
-|               | 15:00        | Case study long read metabarcoding                                             | Ella Thoen                 |
-|               | 16:00        |                                                                                |                            |
-|               |              |                                                                                |                            |
-| **Friday**    | 09:00        | Taxonomic annotation                                                           | Marie Davey (zoom)         |
-|               | 10:00        | Metacoder                                                                      | Ella Thoen                 |
-|               | 11:00        | DNA metabarcoding and contamination                                            | Kristine Bohmann (zoom)    |
-|               | 12:00        | **Lunch break**                                                                |                            |
-|               | 13:00        | Downstream analyses: Multivariate analyses                                     | R. Logares                 |
-|               | 14:00        | Downstream analyses: Network inferences                                        | A. Krabberød               |
-|               | 15:00        | Summing up, QnA                                                                |                            |
-|               |              |                                                                                |                            |
+| Day           | Time (start) | Topic                                                                      | Responsible                |
+| ------------- | ------------ | -------------------------------------------------------------------------- | -------------------------- |
+| **Monday**    | 09:00        | [Introduction to DNA metabarcoding](./Lectures/)                           | Håvard Kauserud            |
+|               | 10:00        | *Introduction continued*                                                   |                            |
+|               | 11:00        | [Introduction to DNA sequencing techniques and data formats ](./Lectures/) | Anders K. Krabberød        |
+|               | 12:00        | **Lunch break**                                                            |                            |
+|               | 13:00        | Get to know each other (group work)                                        | Håvard Kauserud            |
+|               | 14:00        | [Introduction to Linux, Google Colab, R, cutadapt, etc ](./Lectures)       | Ramiro Logares / Krabberød |
+|               | 15:00        | *continued*                                                                |                            |
+|               | 16:00        | *continued*                                                                | A. Krabberød               |
+|               | 17:00        | **PIZZA**                                                                  |                            |
+|               |              |                                                                            |                            |
+| **Tuesday**   | 09:00        | [Introduction to DADA2](Dada2_Pipeline)                                    | A. Krabberød               |
+|               | 10:00        | *DADA2 continued*                                                          |                            |
+|               | 11:00        | *DADA2 continued*                                                          |                            |
+|               | 12:00        | **Lunch break**                                                            |                            |
+|               | 13:00        | [Case study](./Lectures/)                                                  | Adriana Lopes dos Santos   |
+|               | 14:00        | *DADA2 and R hands-on*                                                     | A. Krabberød               |
+|               | 15:00        | *DADA2 and R hands-on*                                                     |                            |
+|               | 16:00        | *DADA2 and R hands-on*                                                     |                            |
+|               |              |                                                                            |                            |
+| **Wednesday** | 09:00        | Introduction to long-read DNA metabarcoding                                | Embla Stokke               |
+|               | 10:00        | Introduction to VSEARCH (and SWARM)                                        | Torbjørn Rognes            |
+|               | 11:00        | The VSEARCH pipeline, hands on session                                     |                            |
+|               | 12:00        | **Lunch break**                                                            |                            |
+|               | 13:00        | The VSEARCH pipeline, hands on session, continuation                       | R. Logares/A. Krabberød    |
+|               | 14:00        | Introduction to LULU/MUMU                                                  | Frédéric Mahé              |
+|               | 15:00        | Data cleanup (contamination, etc.)                                         | Håvard Kauserud            |
+|               |              |                                                                            |                            |
+| **Thursday**  | 09:00        | OTUs, ASVs and phylospecies                                                | Micah Dunthorn             |
+|               | 10:00        | PR2, metaPR2 + other databases                                             | Daniel Vaulot              |
+|               | 11:00        | *PR2 continued*                                                            |                            |
+|               | 12:00        | **Lunch break**                                                            |                            |
+|               | 13:00        | Phylogenetic placement/binning of HTS data                                 | Lucas Czech                |
+|               | 14:00        | *pp continued*                                                             |                            |
+|               | 15:00        | Case study long read metabarcoding                                         | Ella Thoen                 |
+|               | 16:00        |                                                                            |                            |
+|               |              |                                                                            |                            |
+| **Friday**    | 09:00        | Taxonomic annotation                                                       | Marie Davey (zoom)         |
+|               | 10:00        | Metacoder                                                                  | Ella Thoen                 |
+|               | 11:00        | DNA metabarcoding and contamination                                        | Kristine Bohmann (zoom)    |
+|               | 12:00        | **Lunch break**                                                            |                            |
+|               | 13:00        | Downstream analyses: Multivariate analyses                                 | R. Logares                 |
+|               | 14:00        | Downstream analyses: Network inferences                                    | A. Krabberød               |
+|               | 15:00        | Summing up, QnA                                                            |                            |
+|               |              |                                                                            |                            |
 
 
  ----

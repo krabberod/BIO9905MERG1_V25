@@ -3,11 +3,11 @@
 Here we have gathered some literature on metabarcoding.  
 - [Zinger et al. 2019](Zinger_et_al_2019.pdf). DNA metabarcoding—Need for robust experimental designs to draw sound ecological conclusions. Molecular Ecology, 28, 1857-1862
 - [Deiner et al. 2017](Deiner_et_al-2017-Molecular_Ecology.pdf). Environmental DNA metabarcoding: Transforming how we survey animal and plant communities. Molecular Ecology, 26, 5872-5895.
-- [Bohmann et al. 2014](Bohmann_et_al_2014) . Environmental DNA for wildlife biology and biodiversity monitoring. TREE, 29.
+- [Bohmann et al. 2014](./Bohmann_et_al_2014.pdf) . Environmental DNA for wildlife biology and biodiversity monitoring. TREE, 29.
 - [Alberdi et al. 2017](Alberdi_et_al_2017.pdf). Scrutinizing key steps for reliable metabarcoding of environmental samples. Methods in Ecology and Evolution, 9, 134-147.
 - [Lamb et al. 2019](Lamb_et_al_2018.pdf). How quantitative is metabarcoding: A meta‐analytical approach. Molecular Ecology, 28, 420-430.
 - [Jamy et al. 2019](Jamy_et_al_2019.pdf). Long-read metabarcoding of the eukaryotic rDNA operon to phylogenetically and taxonomically resolve environmental diversity. Molecular Ecology Resources, 20, 429-443.
-- [Schnell et al. 2015](Schnell_et_al_2015). Tag jumps illuminated – reducing sequence‐to‐sample misidentifications in metabarcoding studies. Molecular Ecology Resources, 15, 1289-1303.Antich et al. 2021. To denoise or to cluster, that is not the question: optimizing pipelines for COI metabarcoding and metaphylogeography. BMC Bioinformatics, 22,177.
+- [Schnell et al. 2015](./Schnell_et_al_2015.pdf). Tag jumps illuminated – reducing sequence‐to‐sample misidentifications in metabarcoding studies. Molecular Ecology Resources, 15, 1289-1303.Antich et al. 2021. To denoise or to cluster, that is not the question: optimizing pipelines for COI metabarcoding and metaphylogeography. BMC Bioinformatics, 22,177.
 - [Ficetola et al 2023](./Ficetola_et_al_2023.pdf) . Towards exhaustive community ecology via DNA metabarcoding Molecular Ecology, 32:6320–6329..
 - [Minich et al_2019.pdf](./Minich_et_al_2019.pdf). Quantifying and Understanding Well-to-Well Contamination in Microbiome Research. mSystems 4:e00186-19 
 

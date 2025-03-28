@@ -9,6 +9,7 @@ Here we have gathered some literature on metabarcoding.
 - [Jamy et al. 2019](Jamy_et_al_2019.pdf). Long-read metabarcoding of the eukaryotic rDNA operon to phylogenetically and taxonomically resolve environmental diversity. Molecular Ecology Resources, 20, 429-443.
 - [Schnell et al. 2015](Schnell_et_al_2015). Tag jumps illuminated – reducing sequence‐to‐sample misidentifications in metabarcoding studies. Molecular Ecology Resources, 15, 1289-1303.Antich et al. 2021. To denoise or to cluster, that is not the question: optimizing pipelines for COI metabarcoding and metaphylogeography. BMC Bioinformatics, 22,177.
 - [Ficetola et al 2023] (Ficetola et al 2023 Molecular Ecology.pdf). Towards exhaustive community ecology via DNA metabarcoding Molecular Ecology, 32:6320–6329..
+- [Minich et al_2019.pdf](Minich et al_2019.pdf). Quantifying and Understanding Well-to-Well Contamination in Microbiome Research. mSystems 4:e00186-19 
 
 
 ### Methods

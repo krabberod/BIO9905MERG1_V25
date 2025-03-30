@@ -1,4 +1,0 @@
-taxa <- assignTaxonomy(seqtab.nochim, refFasta = pr2_file, taxLevels = PR2_tax_levels,
-                       minBoot = 0, outputBootstraps = TRUE, verbose = TRUE, multithread = TRUE)
-
-saveRDS(taxa,"updated.taxa.rds")

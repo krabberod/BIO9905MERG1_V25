@@ -37,9 +37,9 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 |               | 16:00        | *continued*                                                                                                                                | A. Krabberød               |
 |               | 17:00        | **PIZZA**                                                                                                                                  |                            |
 |               |              |                                                                                                                                            |                            |
-| **Tuesday**   | 09:00        | [Introduction to DADA2](Dada2_Pipeline)                                                                                                    | A. Krabberød               |
-|               | 10:00        | *DADA2 continued*                                                                                                                          |                            |
-|               | 11:00        | *DADA2 continued*                                                                                                                          |                            |
+| **Tuesday**   | 09:00        | [Introduction to DADA2, R and Rstudio](Dada2_Pipeline)                                                                                     | A. Krabberød               |
+|               | 10:00        | *DADA2, R, Rstudio continued*                                                                                                              |                            |
+|               | 11:00        | *DADA2, R, Rstudio continued*                                                                                                              |                            |
 |               | 12:00        | **Lunch break**                                                                                                                            |                            |
 |               | 13:00        | [Case study:Long-read metabarcoding of tropical marine protist communities: insights of the seasonality in equatorial waters](./Lectures/) | Denise Rui Ying Ong        |
 |               | 14:00        | *DADA2 and R hands-on*                                                                                                                     | A. Krabberød               |

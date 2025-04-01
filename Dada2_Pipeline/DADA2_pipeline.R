@@ -33,6 +33,7 @@ dir.create(filtered_dir)
 dir.create(qual_dir)
 dir.create(dada2_dir)
 dir.create(blast_dir)
+dir.create(database_dir)
 
 #### Examine fastq files ####
 # get a list of all fastq files in the fastq" directory and separate R1 and R2
@@ -128,10 +129,12 @@ out <- filterAndTrim(fns_R1, filt_R1, fns_R2, filt_R2, truncLen = c(250, 200),
 err_R1 <- learnErrors(filt_R1, multithread = TRUE, errorEstimationFunction = loessErrfun)
 plotErrors(err_R1, nominalQ = TRUE)
 ggsave("error_model_FWD.pdf")
+saveRDS(err_R1, "err_R1.rds")
 
 err_R2 <- learnErrors(filt_R2, multithread = TRUE, errorEstimationFunction = loessErrfun)
 plotErrors(err_R2, nominalQ = TRUE)
 ggsave("error_model_REV.pdf")
+saveRDS(err_R1, "err_R2.rds")
 
 
 ### FOR NOVASEQ
@@ -189,7 +192,7 @@ plot(table(nchar(getSequences(seqtab)))) #simple plot of length distribution
 # Takes 1 Min on i7
 seqtab.nochim <- removeBimeraDenovo(seqtab, method = "consensus", multithread = FALSE,
                                     verbose = TRUE)
-
+saveRDS(seqtab.nochim, "seqtab.nochim.rds")
 # Get some stats:
 # Compute % of non chimeras
 paste0("% of non chimeras : ", sum(seqtab.nochim)/sum(seqtab) * 100)
@@ -238,11 +241,12 @@ pr2_file <- paste0("databases/pr2_version_5.1.0_SSU_dada2.fasta.gz")
 PR2_tax_levels <- c("Domain", "Supergroup", "Division", "Subdivision", 
   "Class", "Order", "Family", "Genus", "Species", "Accession")
 
-# OBS! The next step takes a long time. It might take hours, depending on the computer.
-# So we will not execute it here! 
-taxa <- assignTaxonomy(seqtab.nochim, refFasta = pr2_file, taxLevels = PR2_tax_levels,
-                      minBoot = 0, outputBootstraps = TRUE, verbose = TRUE, multithread = TRUE)
-saveRDS(taxa,"taxa.rds")
+# OBS! The next step takes a long time, and it requires quite a lot of memory. It might take hours, depending on the computer.
+# And it might not run at all. 
+# So we will not execute it here! I usually run this on a Computing cluster.  
+# taxa <- assignTaxonomy(seqtab.nochim, refFasta = pr2_file, taxLevels = PR2_tax_levels,
+#                      minBoot = 0, outputBootstraps = TRUE, verbose = TRUE, multithread = TRUE)
+
 # Instead I have prepared the object on github. 
 # it can be downloaded from github directly: 
 # taxa <- readRDS(gzcon(url("https://github.com/krabberod/BIO9905MERG1_V25/raw/main/Dada2_Pipeline/taxa.rds")))

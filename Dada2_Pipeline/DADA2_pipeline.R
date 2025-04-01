@@ -229,21 +229,23 @@ Biostrings::writeXStringSet(seq_out, str_c(dada2_dir, "OTU_no_taxonomy.fasta"),
 #
 # This step depends on the kind of taxonomic assignment that will be used later
 # The PR2 database is a curated quality database for protists, with 8 taxonomic ranks
-# url <- "https://github.com/pr2database/pr2database/releases/download/v4.14.0/pr2_version_4.14.0_SSU_dada2.fasta.gz"
-# download.file(url, "databases/pr2_version_4.14.0_SSU_dada2.fasta.gz")
-pr2_file <- paste0("databases/pr2_version_4.14.0_SSU_dada2.fasta.gz")
-PR2_tax_levels <- c("Kingdom", "Supergroup", "Division", "Class",
-                    "Order", "Family",
-                    "Genus", "Species")
+# Version 5.1.0 was released March 2025
+url <- "https://github.com/pr2database/pr2database/releases/download/v5.1.0/pr2_version_5.1.0_SSU_dada2.fasta.gz"
+download.file(url, "databases/pr2_version_5.1.0_SSU_dada2.fasta.gz")
+pr2_file <- paste0("databases/pr2_version_5.1.0_SSU_dada2.fasta.gz")
+
+# The newest version of pr2 has 9 taxonomic ranks:
+PR2_tax_levels <- c("Domain", "Supergroup", "Division", "Subdivision", 
+  "Class", "Order", "Family", "Genus", "Species", "Accession")
 
 # OBS! The next step takes a long time. It might take hours, depending on the computer.
 # So we will not execute it here! 
-# taxa <- assignTaxonomy(seqtab.nochim, refFasta = pr2_file, taxLevels = PR2_tax_levels,
-#                      minBoot = 0, outputBootstraps = TRUE, verbose = TRUE, multithread = TRUE)
-
+taxa <- assignTaxonomy(seqtab.nochim, refFasta = pr2_file, taxLevels = PR2_tax_levels,
+                      minBoot = 0, outputBootstraps = TRUE, verbose = TRUE, multithread = TRUE)
+saveRDS(taxa,"taxa.rds")
 # Instead I have prepared the object on github. 
 # it can be downloaded from github directly: 
-# taxa <- readRDS(gzcon(url("https://github.com/krabberod/BIO9905MERG1_V23/raw/main/Dada2_Pipeline/taxa.rds")))
+# taxa <- readRDS(gzcon(url("https://github.com/krabberod/BIO9905MERG1_V25/raw/main/Dada2_Pipeline/taxa.rds")))
 
 
 # In R it is possible sot save objects, or the full workspace.

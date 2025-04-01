@@ -9,7 +9,7 @@ library("readxl")
 
 #### Prepare Directories ####
 # The fastq files are in this zip-file:
-# https://www.dropbox.com/s/szz60vroo79imyd/fastq_files.zip?dl=0
+# https://www.dropbox.com/scl/fo/5oot50jnb6q8t80kglwv0/ACH3NKw48KKj7Hmd9k8ZZoU?rlkey=fbtdgip22c5ev3qd08cnl4h2h&dl=0
 # Download and unzip in your dada2 working directory.
 # The samples should be in a subfolder simply called "fastq"
 # Check your current working directory:
@@ -46,35 +46,40 @@ sample.names <- str_split(basename(fns_R1), pattern = "_", simplify = TRUE)
 sample.names <- sample.names[, 2]
 
 #### Prepare data: Make a dataframe with the number of sequences in each file ####
-# NB! Any sequence of length 0 will cause the loop to crash
-# These should be removed in advance. Cutadapt should not leave any empty sequences.
-
+# Empty files (i.e files without sequences) will be removed
 df <- data.frame()
-
-for (i in 1:length(fns_R1)) {
-
-  # use the Biosstrings function fastq.geometry
+for (i in seq_along(fns_R1)) {
+  # skip empty files
+  if (file.info(fns_R1[i])$size == 0) {
+    warning(paste("Empty file skipped:", fns_R1[i]))
+    next
+  }
+  # use the Biostrings function fastq.geometry
   geom <- fastq.geometry(fns_R1[i])
-
-  # extract the information on number of sequences and file name
+  # extract number of sequences and file name
   df_one_row <- data.frame(n_seq = geom[1], file_name = basename(fns_R1[i]))
-
-  # add one line to data frame
   df <- bind_rows(df, df_one_row)
 }
+
+View(df)
 
 # knitr::kable(df) # to make html table.
 View(df)
 
 # If you want to write the table to your working directory remove the hashtag and use:
- write.table(df, file = 'n_seq.txt', sep='\t', row.names = FALSE, na='',quote=FALSE)
+write.table(df, file = 'n_seq.txt', sep='\t', row.names = FALSE, na='',quote=FALSE)
 
 # plot the histogram with number of sequences
 # The plot for the example data looks kind of uninformative, why?
-
 ggplot(df, aes(x = n_seq)) +
   geom_histogram(alpha = 0.5, position = "identity", binwidth = 15000)
 hist(df$n_seq, breaks = 10)
+
+# Maybe a boxplot is better for these data: 
+ggplot(df, aes(x = "", y = n_seq)) +
+  geom_boxplot(outlier.shape = NA) +
+  geom_point(alpha = 0.5) 
+
 
 #### Plot Quality for each fastq file ####
 for (i in 1:length(fns)) {
@@ -105,7 +110,7 @@ filt_R2 <- str_c(filtered_dir, sample.names, "_R2_filt.fastq")
 #### DADA2 ####
 # If your setup allows running multiple threads set multithread = TRUE
 # Mac OS: multithread = TRUE
-# Windows: multithread = FALSE, or is ignored by the function
+# Windows: does not work for older versions of R (<4.0)
 # Can take a couple of minutes:
 
 out <- filterAndTrim(fns_R1, filt_R1, fns_R2, filt_R2, truncLen = c(250, 200),
@@ -118,16 +123,32 @@ out <- filterAndTrim(fns_R1, filt_R1, fns_R2, filt_R2, truncLen = c(250, 200),
 # Too 8.5 min for a MacBook Pro Early 2015 (pr. err_profile)
 # The error profile takes about 2 min on an MacBook Pro M2 16Gb Ram
 
-err_R1 <- learnErrors(filt_R1, multithread = TRUE)
-plotErrors(err_R1, nominalQ = TRUE)
+# The defualt error funciton assumes Illumina data (HiSeq, MiSeq, NextSeq But *NOT* NovaSeq). 
 
-err_R2 <- learnErrors(filt_R2, multithread = T)
+err_R1 <- learnErrors(filt_R1, multithread = TRUE, errorEstimationFunction = loessErrfun)
+plotErrors(err_R1, nominalQ = TRUE)
+ggsave("error_model_FWD.pdf")
+
+err_R2 <- learnErrors(filt_R2, multithread = TRUE, errorEstimationFunction = loessErrfun)
 plotErrors(err_R2, nominalQ = TRUE)
+ggsave("error_model_REV.pdf")
+
+
+### FOR NOVASEQ
+# For NovaSeq Illumina is using binned quality scores which means that the
+# original error function in dada2 does not work properly. 
+# See https://github.com/ErnakovichLab/dada2_ernakovichlab
+# See https://github.com/benjjneb/dada2/issues/1307
+
+
+
+# For PacBio CCS/HiFI you should use a different errorEstimationFunction
+# err1 <- learnErrors(filts1, errorEstimationFunction = PacBioErrfun, BAND_SIZE=32, multithread=TRUE)
 
 
 #### STEP 3. Dereplicate the reads ####
 derep_R1 <- derepFastq(filt_R1, verbose = TRUE)
-derep_R2 <- derepFastq(filt_R2, verbose = FALSE)
+derep_R2 <- derepFastq(filt_R2, verbose = TRUE)
 
 
 # Name the derep-class objects by the sample names

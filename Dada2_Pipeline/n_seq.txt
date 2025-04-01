@@ -1,0 +1,9 @@
+n_seq	file_name
+281465	18S_BL040126_022-MSTAReuk_R1.clipped.fastp_adapt_trim.fastq.gz
+121138	18S_BL040419_022-MSTAReuk_R1.clipped.fastp_adapt_trim.fastq.gz
+82763	18S_BL040719_022-MSTAReuk_R1.clipped.fastp_adapt_trim.fastq.gz
+65462	18S_BL041019_022-MSTAReuk_R1.clipped.fastp_adapt_trim.fastq.gz
+297905	18S_BL050120_022-MSTAReuk_R1.clipped.fastp_adapt_trim.fastq.gz
+45417	18S_BL050413_022-MSTAReuk_R1.clipped.fastp_adapt_trim.fastq.gz
+18330	18S_BL050705_022-MSTAReuk_R1.clipped.fastp_adapt_trim.fastq.gz
+133270	18S_BL051004_022-MSTAReuk_R1.clipped.fastp_adapt_trim.fastq.gz

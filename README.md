@@ -48,7 +48,7 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 |               |              |                                                                                                                                            |                            |
 | **Wednesday** | 09:00        | Introduction to long-read DNA metabarcoding                                                                                                | Embla Stokke               |
 |               | 10:00        | Introduction to VSEARCH (and SWARM)                                                                                                        | Torbjørn Rognes            |
-|               | 11:00        | The VSEARCH pipeline, hands on session                                                                                                     |                            |
+|               | 11:00        | The VSEARCH pipeline, hands on session                                                                                                     | R. Logares/A. Krabberød    |
 |               | 12:00        | **Lunch break**                                                                                                                            |                            |
 |               | 13:00        | The VSEARCH pipeline, hands on session, continuation                                                                                       | R. Logares/A. Krabberød    |
 |               | 14:00        | Introduction to LULU/MUMU                                                                                                                  | Frédéric Mahé              |

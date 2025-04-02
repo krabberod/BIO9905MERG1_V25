@@ -212,18 +212,18 @@ rownames(track) <- sample.names
 #View the output
 track
 
-#### Transforming and saving the OTU sequences
+#### Transforming and saving the ASV sequences
 seqtab.nochim_trans <- as.data.frame(t(seqtab.nochim)) %>% rownames_to_column(var = "sequence") %>%
-  rowid_to_column(var = "OTUNumber") %>% mutate(OTUNumber = sprintf("OTU_%05d",
-                                                                    OTUNumber)) %>% mutate(sequence = str_replace_all(sequence, "(-|\\.)", ""))
+  rowid_to_column(var = "ASVNumber") %>% mutate(ASVNumber = sprintf("ASV_%05d",
+                                                                    ASVNumber)) %>% mutate(sequence = str_replace_all(sequence, "(-|\\.)", ""))
 
 #### Extract the sequences and export them in a fasta file:
 df <- seqtab.nochim_trans
 seq_out <- Biostrings::DNAStringSet(df$sequence)
-names(seq_out) <- df$OTUNumber
+names(seq_out) <- df$ASVNumber
 seq_out
 
-Biostrings::writeXStringSet(seq_out, str_c(dada2_dir, "OTU_no_taxonomy.fasta"),
+Biostrings::writeXStringSet(seq_out, str_c(dada2_dir, "ASV_no_taxonomy.fasta"),
                             compress = FALSE, width = 20000)
 #### STEP 8. Assigning taxonomy
 # The PR2 database can be found here:
@@ -247,36 +247,27 @@ PR2_tax_levels <- c("Domain", "Supergroup", "Division", "Subdivision",
 # taxa <- assignTaxonomy(seqtab.nochim, refFasta = pr2_file, taxLevels = PR2_tax_levels,
 #                      minBoot = 50, outputBootstraps = TRUE, verbose = TRUE, multithread = TRUE)
 
-# Instead I have prepared the object on github. 
-# it can be downloaded from github directly: 
-# taxa <- readRDS(gzcon(url("https://github.com/krabberod/BIO9905MERG1_V25/raw/main/Dada2_Pipeline/taxa.rds")))
-
-
+# Instead I have prepared the object on github.
 # In R it is possible sot save objects, or the full workspace.
 # Single objects can be saved to a file with the saveRDS() function
 # Example:
 # saveRDS(taxa, str_c(dada2_dir, "taxa.rds"))
-# Seqtab.nochim_trans <- read.RDS(str_c("seqtab.nochim_trans.rds"))
+# it can be downloaded from github directly: 
+taxa <- readRDS(gzcon(url("https://github.com/krabberod/BIO9905MERG1_V25/raw/main/Dada2_Pipeline/taxa.rds")))
+taxa_df <- as_tibble(taxa)
+taxa_df$ASVNumber <- names(seq_out)
+taxa_df <- taxa_df %>% relocate(ASVNumber, .before = everything())
 
-# Export information in tab or comma separated files
-# Tab:
-write_tsv(as_tibble(taxa$tax), file = str_c(dada2_dir, "taxa.txt"))
-
-# Csv:
-# write.csv(taxa$tax, file = str_c(dada2_dir, "taxa.txt"))
+# Optionally, save the results to a CSV
+write.csv(taxa_df, "dada2_results/taxonomic_assignments_with_bootstrap.csv", row.names = FALSE)
 
 #### Appending taxonomy and boot to the sequence table ####
-# taxa_tax <- as.data.frame(taxa$tax)
-# taxa_boot <- as.data.frame(taxa$boot) 
-# colnames(taxa_boot) <- paste0(colnames(taxa_boot),"_boot")
-# inner_join(seqtab.nochim_trans, rownames_to_column(taxa_tax), by=c("sequence" = "rowname"))#
-# seqtab.nochim_trans <- taxa_tax %>% bind_cols(taxa_boot) %>% bind_cols(seqtab.nochim_trans)
-
+seqtab.nochim_trans <- full_join(taxa_df,seqtab.nochim_trans)
 
 #Check at the Kingdom-level for
-unique(seqtab.nochim_trans$Kingdom)
-unique(seqtab.nochim_trans$Supergroup)
-unique(seqtab.nochim_trans$Family_boot)
+unique(seqtab.nochim_trans$tax.Domain)
+unique(seqtab.nochim_trans$tax.Supergroup)
+table(seqtab.nochim_trans$tax.Division)
 
 #### Filter for 18S ####
 # Define a minimum bootstrap value for filtering
@@ -284,21 +275,23 @@ unique(seqtab.nochim_trans$Family_boot)
 # OTUs with low support? What are the drawbacks?
 
 bootstrap_min <- 80
-# Remove OTU with annotation below the bootstrap value
-seqtab.nochim_18S <- seqtab.nochim_trans %>% dplyr::filter(Supergroup_boot >= bootstrap_min)
-seqtab.nochim_18S <- seqtab.nochim_trans[which(seqtab.nochim_trans$Supergroup_boot>80),]
+# Remove ASVs with annotation below the bootstrap value
+seqtab.nochim_18S <- seqtab.nochim_trans %>% dplyr::filter(boot.Supergroup >= bootstrap_min)
+# Equivalent code in base R
+seqtab.nochim_18S <- seqtab.nochim_trans[which(table_with_taxonomy$boot.Supergroup>80),]
 
-unique(seqtab.nochim_18S$Division)
-sort(unique(seqtab.nochim_18S$Family))
+unique(seqtab.nochim_18S$tax.Division)
+sort(unique(seqtab.nochim_18S$tax.Family))
 
 # Example for removing Metazoans: 
-seqtab.nochim_18S_noMetazoa <- seqtab.nochim_18S[which(seqtab.nochim_18S$Division!="Metazoa"),]
-seqtab.nochim_18S_lowsupport<- seqtab.nochim_trans %>% dplyr::filter(Supergroup_boot <= bootstrap_min)
+seqtab.nochim_18S_noMetazoa <- seqtab.nochim_18S[which(seqtab.nochim_18S$tax.Division!="Metazoa"),]
+# What are those with low support? 
+seqtab.nochim_18S_lowsupport<- seqtab.nochim_trans %>% dplyr::filter(boot.Supergroup <= bootstrap_min)
 
 
-write_tsv(seqtab.nochim_18S, str_c(dada2_dir, "OTU_table.tsv"))
-write_tsv(seqtab.nochim_18S_noMetazoa, str_c(dada2_dir, "OTU_table_noMetazoa.tsv"))
-write_tsv(seqtab.nochim_18S_lowsupport, str_c(dada2_dir, "OTU_table_lowsupport.tsv"))
+write_tsv(seqtab.nochim_18S, str_c(dada2_dir, "ASV_table.tsv"))
+write_tsv(seqtab.nochim_18S_noMetazoa, str_c(dada2_dir, "ASV_table_noMetazoa.tsv"))
+write_tsv(seqtab.nochim_18S_lowsupport, str_c(dada2_dir, "ASV_table_lowsupport.tsv"))
 
 ####  Write FASTA file for BLAST or similar analysis ####
 # Blasting is an alternative to RDP classifier:
@@ -306,48 +299,30 @@ write_tsv(seqtab.nochim_18S_lowsupport, str_c(dada2_dir, "OTU_table_lowsupport.t
 df <- seqtab.nochim_trans
 seq_out <- Biostrings::DNAStringSet(df$sequence)
 
-names(seq_out) <- str_c(df$OTUNumber, df$Supergroup, df$Division, df$Class,
-                        df$Order, df$Family, df$Genus, df$Species, df$Species_boot1, sep = "|")
+names(seq_out) <- str_c(df$ASVNumber, df$tax.Domain, df$tax.Supergroup, df$tax.Division, df$tax.Subdivision, df$tax.Class,
+                        df$tax.Order, df$tax.Family, df$tax.Genus, df$tax.Species, sep = "|")
 
 Biostrings::writeXStringSet(seq_out, str_c(blast_dir, "OTU.fasta"), compress = FALSE,
                             width = 20000)
 
-#### EXTRA Example for blast on the cluster Saga (https://documentation.sigma2.no/hpc_machines/saga.html) ####
-##!/bin/sh
-##SBATCH --job-name=blastn
-##SBATCH --account= #add your own project
-##SBATCH --output=slurm-%j.base
-##SBATCH --cpus-per-task=16
-##SBATCH --time=100:00:00
-##SBATCH --mem-per-cpu=6G
-#
-#module purge
-#module load BLAST+/2.8.1-intel-2018b
-#
-# FASTA=OTU.fasta
-# BLAST_TSV=OTU.blast.tsv
-# DB=/cluster/shared/databases/blast/latest/nt
-#
-#
-# OUT_FMT="6 qseqid sseqid sacc stitle sscinames staxids sskingdoms sblastnames pident slen length mismatch gapopen qstart qend sstart send evalue bitscore"
-#
-# blastn -max_target_seqs 100 -evalue 1.00e-10 -query $FASTA -out $BLAST_TSV -db "$DB" -outfmt "$OUT_FMT" -num_threads 16
-###############
 
 #### Make Phyloseq Object ####
 samdf <- data.frame(sample_name = sample.names)
 rownames(samdf) <- sample.names
+otu_df <- as.data.frame(seqtab.nochim_18S)
 
-rownames(seqtab.nochim_18S)<-seqtab.nochim_18S$OTUNumber
+rownames(otu_df) <- seqtab.nochim_18S$ASVNumber
 
 
-OTU <- seqtab.nochim_18S %>% select_if(is.numeric) %>%
-  select(-contains("_boot")) %>% as.matrix() %>% otu_table(taxa_are_rows = TRUE)
+OTU <- otu_df %>% select_if(is.numeric) %>%
+  select(-contains("boot.")) %>% as.matrix() %>% otu_table(taxa_are_rows = TRUE)
 
-TAX <- seqtab.nochim_18S %>% select(Kingdom:Species) %>%
+TAX <- seqtab.nochim_18S %>% select(tax.Domain:tax.Species) %>%
   as.matrix() %>% tax_table()
+rownames(TAX) <- seqtab.nochim_18S$ASVNumber
 
 ps_dada2 <- phyloseq(OTU, sample_data(samdf), TAX)
+colnames(tax_table(ps_dada2)) <- gsub("^tax\\.", "", colnames(tax_table(ps_dada2)))
 
 ### Saving and loading data ####
 # You can save selected objects:
@@ -382,36 +357,49 @@ plot_bar(ps_dada2, fill = "Division")+
 
 
 ### Subsetting taxa ####
-SAR <- subset_taxa(ps_dada2,  Supergroup %in% c("Alveolata","Stramenopiles","Rhizaria"))
+SAR <- subset_taxa(ps_dada2,  Division %in% c("Alveolata","Stramenopiles","Rhizaria"))
+
 plot_bar(SAR, fill = "Division") +
   geom_bar(aes(color=Division, fill=Division), stat="identity", position="stack")
 
 
 ### Plot only teh Rhizarian orders 
-Rhizaria <- subset_taxa(ps_dada2, Supergroup %in% c("Rhizaria"))
+Rhizaria <- subset_taxa(ps_dada2, Division %in% c("Rhizaria"))
+
 plot_bar(Rhizaria, x="Order", fill = "Order") +
   geom_bar(aes(color=Order, fill=Order), stat="identity", position="stack") +
-  theme(legend.position="none")
+  theme(legend.position="none", axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+### Calculate relative abundance  ####
+ps_dada2_rel <- transform_sample_counts(ps_dada2, function(x) x / sum(x))
+plot_bar(ps_dada2_rel, fill = "Division") +
+  geom_bar(aes(color = Division, fill = Division), stat = "identity", position = "stack") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ### Normalization using median sequencing depth ####
 total <- median(sample_sums(ps_dada2))
 standf <- function(x, t=total) round(t * (x / sum(x)))
 ps_dada2_trans <- transform_sample_counts(ps_dada2, standf)
-
 plot_bar(ps_dada2_trans, fill = "Division")+
   geom_bar(aes(color=Division, fill=Division), stat="identity", position="stack")
 
+
 # For example one can only take OTUs that represent at least 5% of reads in at least one sample.
-# Remember we normalized all the sampples to median number of reads (total).
-ps_dada2_trans_abund <- filter_taxa(ps_dada2_trans, function(x) sum(x > total*0.05) > 0, TRUE)
-plot_heatmap(ps_dada2_trans_abund, method = "MDS", distance = "bray", #
+ps_dada2_rel_abund <- filter_taxa(ps_dada2_rel, function(x) any(x > 0.05), prune = TRUE)
+
+plot_bar(ps_dada2_rel_abund, fill = "Division")+
+  geom_bar(aes(color=Division, fill=Division), stat="identity", position="stack")
+
+# Phyloseq has inbuilt functions to plot heatmaps
+plot_heatmap(ps_dada2_rel_abund, method = "MDS", distance = "bray", #
              taxa.label = "Genus", taxa.order = "Genus",
              trans=NULL, low="beige", high="red", na.value="beige")
 
 # ordination of samples:
-ps_dada2_trans.ord <- ordinate(ps_dada2_trans, "NMDS", "bray")
-plot_ordination(ps_dada2_trans, ps_dada2_trans.ord, type="samples")
-plot_ordination(ps_dada2_trans, ps_dada2_trans.ord, type="taxa", color="Supergroup",
+ps_dada2_rel.ord <- ordinate(ps_dada2_rel, "DCA", "bray")
+plot_ordination(ps_dada2_rel, ps_dada2_rel.ord, type="samples")
+plot_ordination(ps_dada2_rel, ps_dada2_rel.ord, type="taxa", color="Supergroup",
                 title="OTUs")
 
 #### Microbiome ####

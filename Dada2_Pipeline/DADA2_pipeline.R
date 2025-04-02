@@ -245,7 +245,7 @@ PR2_tax_levels <- c("Domain", "Supergroup", "Division", "Subdivision",
 # And it might not run at all. 
 # So we will not execute it here! I usually run this on a Computing cluster.  
 # taxa <- assignTaxonomy(seqtab.nochim, refFasta = pr2_file, taxLevels = PR2_tax_levels,
-#                      minBoot = 0, outputBootstraps = TRUE, verbose = TRUE, multithread = TRUE)
+#                      minBoot = 50, outputBootstraps = TRUE, verbose = TRUE, multithread = TRUE)
 
 # Instead I have prepared the object on github. 
 # it can be downloaded from github directly: 

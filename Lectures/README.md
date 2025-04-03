@@ -1,12 +1,9 @@
 ### Monday
 - Introduction to DNA metabarcoding. Håvard Kauserud
 - Introduction to sequencing techniques. Anders K. Krabberød
-- [Introduction to Linux](../Lectures/Intro.to.unix/intro.to.unix.v2.pdf) - Ramiro Logares
-  - [Linux cheat sheet](../Lectures/Intro.to.unix/Unix.cheat.sheet.pdf)
-  - [Linux tutorial](../Lectures/Intro.to.unix/unix.commands.and.tutorial.txt)
+- [Introduction to Linux](../Lectures/Intro.to.unix/) - Ramiro Logares
 - [Introduction to Google Colab](../Lectures/Intro.to.colab/) - R. Logares 
-- [Introduction to R - Slides](../Lectures/intro.to.R/intro.to.R.2025.pdf) - R. Logares
-  - [Introduction to R - Examples](../Lectures/intro.to.R/Intro.to.R.BIO9905MERG1_V25.R)
+- [Introduction to R](../Lectures/intro.to.R/) - R. Logares
 - [Sequence cleaning](../Lectures/cutadapt.and.seq.cleaning/)
 ### Tuesday
 - DADA2 lecture - A.K. Krabberød

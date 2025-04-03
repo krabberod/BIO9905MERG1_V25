@@ -75,5 +75,5 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 
  ----
 ### Supported by[ ForBio](https://www.forbio.uio.no/)
-[](images/forbio_logo.png) 
+![](./images/logo.png) 
 All the keywords in this explanation, by the way, are totally misleading, due to the everyday quirks of language. **Don DeLillo, Ratner's Star**.

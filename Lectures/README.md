@@ -12,6 +12,7 @@
 ### Wednesday
 - Introduction to long-read DNA metabarcoding. Embla Stokke
 - Introduction to VSEARCH and Swarm. Torbjørn Rognes
+- Hands-on with VSEARCH and Swarm. R. Logares, A.K. Krabberød
 - Introduction to LULU/MUMU. Frédéric Mahé
 ### Thursday
 - Phylogenetic placement - L. Czeck

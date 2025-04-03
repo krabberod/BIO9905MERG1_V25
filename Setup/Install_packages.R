@@ -9,7 +9,6 @@ installed.packages()
 # Run these installation commands line-by-line in R (or Rstudio)
 # and answer yes if you are asked to update any previously installed packages:
 
-
 install.packages("readxl")    # To read excel files
 install.packages("metacoder") 
 install.packages("tidyverse") # To manipulate and visualize data

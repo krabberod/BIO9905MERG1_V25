@@ -11,7 +11,8 @@ These are the required packages for the hands-on exercises of the course:
 install.packages("readxl")    # To read excel files
 install.packages("tidyverse") # To manipulate and visualize data
 install.packages("metacoder")
-install.packages("magrittr") 
+install.packages("magrittr")
+install.packages("kableExtra")
 
 if (!requireNamespace("BiocManager", quietly = TRUE))  install.packages("BiocManager")
 BiocManager::install(c("dada2", "phyloseq","Biostrings","PCAtools"))

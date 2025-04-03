@@ -22,8 +22,8 @@ install.packages("tidyverse") # To manipulate and visualize data
 # install.packages("stringr")   # To manipulate strings
 # install.packages("ggplot2")   # To do plots
 # install.packages("readr")     # To read and write files
-install.packages("kableExtra")
 
+install.packages("kableExtra")
 install.packages("magrittr")
 
 # Some packages, (for instance dada2 and phyloseq) are in a different repository

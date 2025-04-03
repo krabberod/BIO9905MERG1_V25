@@ -9,64 +9,73 @@ installed.packages()
 # Run these installation commands line-by-line in R (or Rstudio)
 # and answer yes if you are asked to update any previously installed packages:
 
-install.packages("readxl")    # To read excel files
-install.packages("metacoder") 
-install.packages("tidyverse") # To manipulate and visualize data
-# Tidyverse is a collection of packages that are really useful for data manipulation,
-# an visualization. These packages are included and you do not need to install them 
-# separately (although you can if you want to)
-# install.packages("dplyr")     # To manipulate dataframes
-# install.packages("tibble")    # To work with data frames
-# install.packages("tidyr")     # To work with data frames
-# install.packages("stringr")   # To manipulate strings
-# install.packages("ggplot2")   # To do plots
-# install.packages("readr")     # To read and write files
+##############################
+# Core tidyverse and utilities
+##############################
 
-install.packages("kableExtra")
-install.packages("magrittr")
+install.packages("tidyverse")    # Includes ggplot2, dplyr, tidyr, readr, tibble, stringr, etc.
+install.packages("readxl")       # To read Excel files
+install.packages("magrittr")     # Provides pipe (%>%) and other functional tools
+install.packages("kableExtra")   # Formatting tables in RMarkdown and knitr
 
-# Some packages, (for instance dada2 and phyloseq) are in a different repository
-# called Bioconductor. To install package from the Bioconductor repository
-# you need to use the BiocManager package: 
-if (!requireNamespace("BiocManager", quietly = TRUE))  install.packages("BiocManager")
-BiocManager::install(c("dada2", "phyloseq","Biostrings","PCAtools"))
+##############################
+# Bioconductor packages
+##############################
 
-install.packages("devtools")               # Developer tools
-devtools::install_github("tobiasgf/lulu")
+if (!requireNamespace("BiocManager", quietly = TRUE)) 
+  install.packages("BiocManager")
 
+BiocManager::install(c(
+  "dada2",        # Denoising and ASV inference
+  "phyloseq",     # Microbiome data handling and visualization
+  "Biostrings",   # Efficient string manipulation for biological sequences
+  "PCAtools"      # Visualization and exploration of PCA results
+))
 # If you run into problems when running the above line try to install one package
 # at the time. i.e.: 
-# if (!requireNamespace("BiocManager", quietly = TRUE))  install.packages("BiocManager")
-# BiocManager::install("dada2")
+# if (!requireNamespace("BiocManager", quietly = TRUE)) 
+#   install.packages("BiocManager")
+#   BiocManager::install("dada2")
 
-# install.packages("Matrix")	# Manipulation of large matrices
-# install.packages("wTO") 	# Newtork analysis
-# install.packages("igraph")	# Network analysis
-# install.packages("standardize")
-# install.packages("vegan")
+##############################
+# Community ecology and multivariate analysis
+##############################
 
-# Packages related to ecological analysis. Only shown as examples.
-# install.packages("spaa")           # Installs the ecological package spaa
-# install.packages("compositions")   # To work with compositional data
-# install.packages("zCompositions")  # To work with compositional data
-# install.packages("mixOmics")       # Multivariate methods
-# install.packages("ape")            # Phylogenetic tools
-# install.packages("recluster")      # Clustering tools
-# install.packages("dendextend")     # To work with dendrograms
-# install.packages("corrplot")       # makes nice correlation plots
-# install.packages("RcmdrMisc")      # diverse tools
+install.packages("vegan")        # Community ecology analyses
+install.packages("spaa")         # Species association analysis
+install.packages("compositions") # Analyzing compositional data
+install.packages("zCompositions")# Handling zeros in compositional data
+install.packages("mixOmics")     # Multivariate methods (e.g., PLS-DA, PCA)
+install.packages("ape")          # Phylogenetic and evolutionary analyses
+install.packages("recluster")    # Clustering and re-clustering methods
+install.packages("dendextend")   # Extending and comparing dendrograms
+install.packages("corrplot")     # Visualizing correlation matrices
+install.packages("RcmdrMisc")    # Miscellaneous statistical functions
 
-# BiocManager::install("microbiome")
+##############################
+# Microbiome data visualization
+##############################
 
+install.packages("metacoder")    # Taxonomic data visualization and manipulation
 
-# Network packages
-# library(devtools)
-# install_github("zdk123/SpiecEasi")
-# BiocManager::install("SpiecEasi") # Network construction
-# devtools::install_github("pr2database/pr2database") # Installs directly from github resources that are not in R repos
-# devtools::install_github("GuillemSalazar/EcolUtils") # Installs other tools for ecological analyses
-# devtools::install_github('fawda123/ggord')
+##############################
+# Developer tools and GitHub packages
+##############################
+
+install.packages("devtools")     # Tools for developing packages and installing from GitHub
+devtools::install_github("pr2database/pr2database")     # PR2 reference database tools
+devtools::install_github("GuillemSalazar/EcolUtils")    # Ecological utility functions
+devtools::install_github('fawda123/ggord')              # Ordination plots with ggplot2
+devtools::install_github("tobiasgf/lulu")               # LULU: post-clustering curation of OTUs
 # This package might cause a problem. Here are some possible solutions:
 # https://thecoatlessprofessor.com/programming/cpp/r-compiler-tools-for-rcpp-on-macos/
 # https://stackoverflow.com/questions/37776377/error-when-installing-an-r-package-from-github-could-not-find-build-tools-neces
+
+# Network packages as example
+# library(devtools)
+# install_github("zdk123/SpiecEasi")
+# BiocManager::install("SpiecEasi") # Network construction
+# install.packages("wTO") 	# Newtork analysis
+# install.packages("igraph")	# Network analysis
+# 
 

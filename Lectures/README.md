@@ -1,6 +1,6 @@
 ### Monday
 - Introduction to DNA metabarcoding. Håvard Kauserud
-- Introduction to sequencing techniques. Anders K. Krabberød
+- [Introduction to sequencing techniques](../Lectures/Lecture_pdfs/Seq_tech_Krabberod_v25.pdf). Anders K. Krabberød
 - [Introduction to Linux](../Lectures/Intro.to.unix/) - Ramiro Logares
 - [Introduction to Google Colab](../Lectures/Intro.to.colab/) - R. Logares 
 - [Introduction to R](../Lectures/intro.to.R/) - R. Logares

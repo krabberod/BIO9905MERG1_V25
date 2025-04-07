@@ -25,4 +25,6 @@
 - Networks - A. Krabberød
 - Downstream analyses - R. Logares
 
+# Main steps of a typical metabarcoding analysis:
+
 ![](./Lecture_pdfs/bioinfo_steps.png)  

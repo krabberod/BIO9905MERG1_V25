@@ -16,7 +16,7 @@
 - Introduction to LULU/MUMU. Frédéric Mahé
 ### Thursday
 - Phylogenetic placement - L. Czeck
-- PR2, metaPR2 + other databases. Daniel Vaulot
+- [PR2, metaPR2 + other databases](./Lecture_pdfs/2025-04-10%20PR2-UiO%20course.pdf). Daniel Vaulot
 - Equating OTUs with Species Diversity - M. Dunthorn
 - 
 ### Friday

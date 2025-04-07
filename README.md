@@ -27,7 +27,7 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 
 | Day           | Time (start) | Topic                                                                                                                                      | Responsible             |
 | ------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- |
-| **Monday**    | 09:00        | [Introduction to DNA metabarcoding](./Lectures/Lecture_pdfs/Intro%20lecture%20revised.pdf)                                                                                           | Håvard Kauserud         |
+| **Monday**    | 09:00        | [Introduction to DNA metabarcoding](./Lectures/Lecture_pdfs/Intro%20lecture%20revised.pdf)                                                 | Håvard Kauserud         |
 |               | 10:00        | *Introduction continued*                                                                                                                   |                         |
 |               | 11:00        | [Introduction to DNA sequencing techniques and data formats ](./Lectures/)                                                                 | Anders K. Krabberød     |
 |               | 12:00        | **Lunch break**                                                                                                                            |                         |
@@ -55,7 +55,7 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 |               | 15:00        | Data cleanup (contamination, etc.)                                                                                                         | Håvard Kauserud         |
 |               |              |                                                                                                                                            |                         |
 | **Thursday**  | 09:00        | OTUs, ASVs and phylospecies                                                                                                                | Micah Dunthorn          |
-|               | 10:00        | PR2, metaPR2 + other databases                                                                                                             | Daniel Vaulot           |
+|               | 10:00        | [PR2, metaPR2 + other databases](./Lectures/Lecture_pdfs/2025-04-10%20PR2-UiO%20course.pdf)                                                                                                             | Daniel Vaulot           |
 |               | 11:00        | *PR2 continued*                                                                                                                            |                         |
 |               | 12:00        | **Lunch break**                                                                                                                            |                         |
 |               | 13:00        | Phylogenetic placement/binning of HTS data                                                                                                 | Lucas Czech             |

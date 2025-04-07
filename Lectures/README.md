@@ -7,7 +7,7 @@
 - [Introduction to R](../Lectures/intro.to.R/) - R. Logares
 - [Sequence cleaning](../Lectures/cutadapt.and.seq.cleaning/)
 ### Tuesday
-- DADA2 lecture - A.K. Krabberød
+- [DADA2 lecture](./Lecture_pdfs/DADA2_lecture_V25.pdf) - A.K. Krabberød
   - [DADA2 pipeline](../Dada2_Pipeline/)
 - Case study
 ### Wednesday

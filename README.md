@@ -31,7 +31,7 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 |               | 10:00        | *Introduction continued*                                                                                                                   |                         |
 |               | 11:00        | [Introduction to DNA sequencing techniques and data formats ](./Lectures/)                                                                 | Anders K. Krabberød     |
 |               | 12:00        | **Lunch break**                                                                                                                            |                         |
-|               | 13:00        | Get to know each other (group work)                                                                                                        | Håvard Kauserud         |
+|               | 13:00        |[ Get to know each other (group work)](./Lectures/Lecture_pdfs/Groups.pdf)                                                                                                       | Håvard Kauserud         |
 |               | 14:00        | [Introduction to Linux, Google Colab, R, cutadapt, etc ](./Lectures)                                                                       | Ramiro Logares          |
 |               | 15:00        | *continued*                                                                                                                                |                         |
 |               | 16:00        | *continued*                                                                                                                                |                         |

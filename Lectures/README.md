@@ -24,3 +24,5 @@
 - Introduction to Metacoder - E. Thoen
 - Networks - A. Krabberød
 - Downstream analyses - R. Logares
+
+![](./Lecture_pdfs/bioinfo_steps.png)  

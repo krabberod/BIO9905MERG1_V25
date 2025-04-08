@@ -41,7 +41,8 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 |               | 10:00        | *DADA2, R, Rstudio continued*                                                                                                               |                         |
 |               | 11:00        | *DADA2, R, Rstudio continued*                                                                                                               |                         |
 |               | 12:00        | **Lunch break**                                                                                                                             |                         |
-|               | 13:00        | [Case study:Long-read metabarcoding of tropical marine protist communities: insights of the seasonality in equatorial waters](./Lectures/Lecture_pdfs/Denise_metaB%20course-case%20study.pdf)     |
+|               | 13:00        | [Case study:Long-read metabarcoding of tropical marine protist communities: insights of the seasonality in equatorial waters](./Lectures/Lecture_pdfs/Denise_metaB%20course-case%20study.pdf)     |Denise Ong Rui Ying
+|               | 14:00        | *Case study continued*                                                                                                                      |                         |
 |               | 14:00        | *DADA2 and R hands-on*                                                                                                                      | A. Krabberød            |
 |               | 15:00        | *DADA2 and R hands-on*                                                                                                                      |                         |
 |               | 16:00        | *DADA2 and R hands-on*                                                                                                                      |                         |

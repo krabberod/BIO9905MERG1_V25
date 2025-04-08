@@ -114,7 +114,7 @@ filt_R2 <- str_c(filtered_dir, sample.names, "_R2_filt.fastq")
 # Windows: does not work for older versions of R (<4.0)
 # Can take a couple of minutes:
 
-out <- filterAndTrim(fns_R1, filt_R1, fns_R2, filt_R2, truncLen = c(250, 200),
+out <- filterAndTrim(fns_R1, filt_R1, fns_R2, filt_R2, truncLen = c(240, 185),
                      # trimLeft = c(primer_length_fwd, primer_length_rev), # IF primers are left in the reads
                      maxN = 0, maxEE = c(2, 2), truncQ = 2, rm.phix = TRUE,
                      compress = FALSE, multithread = FALSE)
@@ -134,7 +134,7 @@ saveRDS(err_R1, "err_R1.rds")
 err_R2 <- learnErrors(filt_R2, multithread = TRUE, errorEstimationFunction = loessErrfun)
 plotErrors(err_R2, nominalQ = TRUE)
 ggsave("error_model_REV.pdf")
-saveRDS(err_R1, "err_R2.rds")
+saveRDS(err_R2, "err_R2.rds")
 
 
 ### FOR NOVASEQ
@@ -169,16 +169,16 @@ dada_R1 <- dada(derep_R1, err = err_R1, multithread = TRUE, pool = FALSE)
 dada_R2 <- dada(derep_R2, err = err_R2, multithread = TRUE, pool = FALSE)
 
 # Viewing the first entry in each of the dada objects
-dada_R1[[1]]
+dada_R1[[3]]
 dada_R2[[1]]
 
 #### STEP 5. Merge Sequences
 mergers <- mergePairs(dada_R1, derep_R1, dada_R2, derep_R2, verbose = TRUE)
-head(mergers[[1]])
+head(mergers[[2]])
 
 #### STEP 6. Merge  ####
 seqtab <- makeSequenceTable(mergers)
-dim(seqtab)
+dim(t_seqtab)
 # Make a transposed version of seqtab to make it similar to data in mothur
 t_seqtab <- t(seqtab) # the function t() is a simple transposing of the matrix
 table(nchar(getSequences(seqtab)))
@@ -233,7 +233,7 @@ Biostrings::writeXStringSet(seq_out, str_c(dada2_dir, "ASV_no_taxonomy.fasta"),
 # This step depends on the kind of taxonomic assignment that will be used later
 # The PR2 database is a curated quality database for protists, with 8 taxonomic ranks
 # Version 5.1.0 was released March 2025
-url <- "https://github.com/pr2database/pr2database/releases/download/v5.1.0/pr2_version_5.1.0_SSU_dada2.fasta.gz"
+url <- "https://github.com/pr2database/pr2database/releases/download/v5.1.0.0/pr2_version_5.1.0_SSU_dada2.fasta.gz"
 download.file(url, "databases/pr2_version_5.1.0_SSU_dada2.fasta.gz")
 pr2_file <- paste0("databases/pr2_version_5.1.0_SSU_dada2.fasta.gz")
 
@@ -253,13 +253,15 @@ PR2_tax_levels <- c("Domain", "Supergroup", "Division", "Subdivision",
 # Example:
 # saveRDS(taxa, str_c(dada2_dir, "taxa.rds"))
 # it can be downloaded from github directly: 
-taxa <- readRDS(gzcon(url("https://github.com/krabberod/BIO9905MERG1_V25/raw/main/Dada2_Pipeline/taxa.rds")))
-taxa_df <- as_tibble(taxa)
-taxa_df$ASVNumber <- names(seq_out)
-taxa_df <- taxa_df %>% relocate(ASVNumber, .before = everything())
+# taxa <- readRDS(gzcon(url("https://github.com/krabberod/BIO9905MERG1_V25/raw/main/Dada2_Pipeline/taxa.rds")))
+taxa_df <- read.table(url("https://github.com/krabberod/BIO9905MERG1_V25/raw/main/Dada2_Pipeline/dada2_results/taxonomic_assignments_with_bootstrap.csv"), sep = ",", header = TRUE)
+
+#taxa_df <- as_tibble(taxa)
+#taxa_df$ASVNumber <- names(seq_out)
+#taxa_df <- taxa_df %>% relocate(ASVNumber, .before = everything())
 
 # Optionally, save the results to a CSV
-write.csv(taxa_df, "dada2_results/taxonomic_assignments_with_bootstrap.csv", row.names = FALSE)
+# write.csv(taxa_df, "dada2_results/taxonomic_assignments_with_bootstrap.csv", row.names = FALSE
 
 #### Appending taxonomy and boot to the sequence table ####
 seqtab.nochim_trans <- full_join(taxa_df,seqtab.nochim_trans)
@@ -278,7 +280,7 @@ bootstrap_min <- 80
 # Remove ASVs with annotation below the bootstrap value
 seqtab.nochim_18S <- seqtab.nochim_trans %>% dplyr::filter(boot.Supergroup >= bootstrap_min)
 # Equivalent code in base R
-seqtab.nochim_18S <- seqtab.nochim_trans[which(table_with_taxonomy$boot.Supergroup>80),]
+seqtab.nochim_18S <- seqtab.nochim_trans[which(seqtab.nochim_trans$boot.Supergroup>80),]
 
 unique(seqtab.nochim_18S$tax.Division)
 sort(unique(seqtab.nochim_18S$tax.Family))

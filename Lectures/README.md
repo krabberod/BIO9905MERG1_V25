@@ -12,7 +12,7 @@
 - Case study
 ### Wednesday
 - Introduction to long-read DNA metabarcoding. Embla Stokke
-- Introduction to VSEARCH and Swarm. Torbjørn Rognes
+- [Introduction to VSEARCH and Swarm. Torbjørn Rognes](./Lecture_pdfs/bio9901merg1-2025-vsearch-swarm.pdf)
 - [Hands-on with VSEARCH and Swarm](./vsearch_swarm_pipeline_2025.ipynb). R. Logares, A.K. Krabberød
 - Introduction to LULU/MUMU. Frédéric Mahé
 ### Thursday

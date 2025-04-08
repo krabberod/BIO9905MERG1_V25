@@ -284,7 +284,6 @@ seqtab.nochim_18S_noMetazoa <- seqtab.nochim_18S[which(seqtab.nochim_18S$tax.Div
 # What are those with low support? 
 seqtab.nochim_18S_lowsupport<- seqtab.nochim_trans %>% dplyr::filter(boot.Supergroup <= bootstrap_min)
 
-
 write_tsv(seqtab.nochim_18S, str_c(dada2_dir, "ASV_table.tsv"))
 write_tsv(seqtab.nochim_18S_noMetazoa, str_c(dada2_dir, "ASV_table_noMetazoa.tsv"))
 write_tsv(seqtab.nochim_18S_lowsupport, str_c(dada2_dir, "ASV_table_lowsupport.tsv"))
@@ -336,8 +335,9 @@ plot_bar(ps_dada2, fill = "Supergroup")
 plot_bar(ps_dada2, fill = "Division")
 
 # Make it a bit better with
-plot_bar(ps_dada2, fill = "Division")+
-  geom_bar(aes(color=Division, fill=Division), stat="identity", position="stack")
+plot_bar(ps_dada2, fill = "Division") +
+  geom_bar(aes(color=Division, fill=Division), 
+           stat="identity", position="stack") 
 
 
 ### Subsetting taxa ####

@@ -64,9 +64,6 @@ for (i in seq_along(fns_R1)) {
 
 View(df)
 
-# knitr::kable(df) # to make html table.
-View(df)
-
 # If you want to write the table to your working directory remove the hashtag and use:
 write.table(df, file = 'n_seq.txt', sep='\t', row.names = FALSE, na='',quote=FALSE)
 
@@ -136,7 +133,6 @@ plotErrors(err_R2, nominalQ = TRUE)
 ggsave("error_model_REV.pdf")
 saveRDS(err_R2, "err_R2.rds")
 
-
 ### FOR NOVASEQ
 # For NovaSeq Illumina is using binned quality scores which means that the
 # original error function in dada2 does not work properly. 
@@ -178,7 +174,7 @@ head(mergers[[2]])
 
 #### STEP 6. Merge  ####
 seqtab <- makeSequenceTable(mergers)
-dim(t_seqtab)
+dim(seqtab)
 # Make a transposed version of seqtab to make it similar to data in mothur
 t_seqtab <- t(seqtab) # the function t() is a simple transposing of the matrix
 table(nchar(getSequences(seqtab)))
@@ -254,8 +250,6 @@ PR2_tax_levels <- c("Domain", "Supergroup", "Division", "Subdivision",
 # saveRDS(taxa, str_c(dada2_dir, "taxa.rds"))
 # it can be downloaded from github directly: 
 # taxa <- readRDS(gzcon(url("https://github.com/krabberod/BIO9905MERG1_V25/raw/main/Dada2_Pipeline/taxa.rds")))
-taxa_df <- read.table(url("https://github.com/krabberod/BIO9905MERG1_V25/raw/main/Dada2_Pipeline/dada2_results/taxonomic_assignments_with_bootstrap.csv"), sep = ",", header = TRUE)
-
 #taxa_df <- as_tibble(taxa)
 #taxa_df$ASVNumber <- names(seq_out)
 #taxa_df <- taxa_df %>% relocate(ASVNumber, .before = everything())
@@ -263,6 +257,7 @@ taxa_df <- read.table(url("https://github.com/krabberod/BIO9905MERG1_V25/raw/mai
 # Optionally, save the results to a CSV
 # write.csv(taxa_df, "dada2_results/taxonomic_assignments_with_bootstrap.csv", row.names = FALSE
 
+taxa_df <- read.table(url("https://github.com/krabberod/BIO9905MERG1_V25/raw/main/Dada2_Pipeline/dada2_results/taxonomic_assignments_with_bootstrap.csv"), sep = ",", header = TRUE)
 #### Appending taxonomy and boot to the sequence table ####
 seqtab.nochim_trans <- full_join(taxa_df,seqtab.nochim_trans)
 
@@ -294,18 +289,6 @@ seqtab.nochim_18S_lowsupport<- seqtab.nochim_trans %>% dplyr::filter(boot.Superg
 write_tsv(seqtab.nochim_18S, str_c(dada2_dir, "ASV_table.tsv"))
 write_tsv(seqtab.nochim_18S_noMetazoa, str_c(dada2_dir, "ASV_table_noMetazoa.tsv"))
 write_tsv(seqtab.nochim_18S_lowsupport, str_c(dada2_dir, "ASV_table_lowsupport.tsv"))
-
-####  Write FASTA file for BLAST or similar analysis ####
-# Blasting is an alternative to RDP classifier:
-
-df <- seqtab.nochim_trans
-seq_out <- Biostrings::DNAStringSet(df$sequence)
-
-names(seq_out) <- str_c(df$ASVNumber, df$tax.Domain, df$tax.Supergroup, df$tax.Division, df$tax.Subdivision, df$tax.Class,
-                        df$tax.Order, df$tax.Family, df$tax.Genus, df$tax.Species, sep = "|")
-
-Biostrings::writeXStringSet(seq_out, str_c(blast_dir, "OTU.fasta"), compress = FALSE,
-                            width = 20000)
 
 
 #### Make Phyloseq Object ####

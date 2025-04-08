@@ -248,8 +248,7 @@ PR2_tax_levels <- c("Domain", "Supergroup", "Division", "Subdivision",
 # Single objects can be saved to a file with the saveRDS() function
 # Example:
 # saveRDS(taxa, str_c(dada2_dir, "taxa.rds"))
-# it can be downloaded from github directly: 
-# taxa <- readRDS(gzcon(url("https://github.com/krabberod/BIO9905MERG1_V25/raw/main/Dada2_Pipeline/taxa.rds")))
+
 #taxa_df <- as_tibble(taxa)
 #taxa_df$ASVNumber <- names(seq_out)
 #taxa_df <- taxa_df %>% relocate(ASVNumber, .before = everything())

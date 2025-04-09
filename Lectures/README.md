@@ -14,7 +14,7 @@
 - Introduction to long-read DNA metabarcoding. Embla Stokke
 - [Introduction to VSEARCH and Swarm. Torbjørn Rognes](./Lecture_pdfs/bio9901merg1-2025-vsearch-swarm.pdf)
 - Hands-on with VSEARCH and Swarm. R. Logares, A.K. Krabberød
-- Introduction to LULU/MUMU. Frédéric Mahé
+- [Introduction to LULU/MUMU. Frédéric Mahé](./Lecture_pdfs/mahe_lulu_olso_2025.pdf)
 ### Thursday
 - Phylogenetic placement - L. Czeck
 - [PR2, metaPR2 + other databases](./Lecture_pdfs/2025-04-10%20PR2-UiO%20course.pdf). Daniel Vaulot

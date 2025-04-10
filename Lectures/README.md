@@ -16,7 +16,7 @@
 - Hands-on with VSEARCH and Swarm. R. Logares, A.K. Krabberød
 - [Introduction to LULU/MUMU. Frédéric Mahé](./Lecture_pdfs/mahe_lulu_olso_2025.pdf)
 ### Thursday
-- Phylogenetic placement - L. Czeck
+- [Phylogenetic placement](./Lecture_pdfs/phylogenetic-placement.pdf)- L. Czeck
 - [PR2, metaPR2 + other databases](./Lecture_pdfs/2025-04-10%20PR2-UiO%20course.pdf). Daniel Vaulot
 - [Equating OTUs with Species Diversity](./Lecture_pdfs/clustering_talk_Oslo_2025.pdf) - M. Dunthorn
 - [The Ribosomal Operon Database (ROD)](./Lecture_pdfs/Krabberod_ROD_BIO9905MERG_V25.pdf) - A. K. Krabberød

@@ -19,8 +19,8 @@
 - Phylogenetic placement - L. Czeck
 - [PR2, metaPR2 + other databases](./Lecture_pdfs/2025-04-10%20PR2-UiO%20course.pdf). Daniel Vaulot
 - [Equating OTUs with Species Diversity](./Lecture_pdfs/clustering_talk_Oslo_2025.pdf) - M. Dunthorn
-- [The Ribosomal Operon Database (ROD)](./Lecture_pdfs/Krabberod_ROD_BIO9905MERG_V25.pdf)
-- 
+- [The Ribosomal Operon Database (ROD)](./Lecture_pdfs/Krabberod_ROD_BIO9905MERG_V25.pdf) - A. K. Krabberød
+- [Exploring Archaeorhizomycetes diversity...](./Lecture_pdfs/Archies_spring2025_ELLA_THOEN.pdf) - E. Thoen
 ### Friday
 - Taxonomic Assignment - M. Davey
 - Introduction to Metacoder - E. Thoen

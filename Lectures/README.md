@@ -22,7 +22,7 @@
 - [The Ribosomal Operon Database (ROD)](./Lecture_pdfs/Krabberod_ROD_BIO9905MERG_V25.pdf) - A. K. Krabberød
 - [Exploring Archaeorhizomycetes diversity...](./Lecture_pdfs/Archies_spring2025_ELLA_THOEN.pdf) - E. Thoen
 ### Friday
-- Taxonomic Assignmen]t - M. Davey
+- [Taxonomic Assignment](./Lecture_pdfs/metabarcoding_course_taxonomic_assignment_11042025.pdf) - M. Davey
 - Introduction to Metacoder - E. Thoen
 - [Networks](./Lecture_pdfs/Networks_Bio9905_V25.pdf) - A. Krabberød
 - Downstream analyses - R. Logares

@@ -25,7 +25,7 @@
 - [Taxonomic Assignment](./Lecture_pdfs/metabarcoding_course_taxonomic_assignment_11042025.pdf) - M. Davey
 - [Introduction to Metacoder](./Lecture_pdfs/Metacoder%20introduction.pdf) - E. Thoen
 - [Networks](./Lecture_pdfs/Networks_Bio9905_V25.pdf) - A. K. Krabberød
-- Downstream analyses - R. Logares
+- [Downstream analyses: ecological analysis](./community.ecology.intro/) - R. Logares
 
 # Main steps of a typical metabarcoding analysis:
 

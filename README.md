@@ -73,6 +73,9 @@ The main teachers will be Ramiro Logares, Anders K. Krabberød, Micah Dunthorn, 
 |               | 15:00        | Summing up, QnA                                                                                                                                                                               | *Tutti*                 |
 |               |              |                                                                                                                                                                                               |                         |
 
+# The Class of 2025
+
+![](./images/Class_of_2025.png)
 
  ----
 ### Supported by[ ForBio](https://www.forbio.uio.no/)
